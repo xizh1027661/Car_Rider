@@ -62,7 +62,7 @@ class _UserPageState extends State<UserPage> {
                 padding: const EdgeInsets.all(2.0),
                 child: Container(
                   width: screen.width,
-                  height: screen.height*0.1,
+                  height: screen.height*0.4,
                   child: ListView.builder(scrollDirection: Axis.vertical,itemCount:provider.fareList.length ,itemBuilder: (context,iteam){
                     final faremodel=provider.fareList[iteam];
                     return Card(
@@ -96,24 +96,24 @@ class _UserPageState extends State<UserPage> {
               ),),
             ),
             Consumer<AppCarHelperProvider>(builder: (context,carprovider,_)=> Container(
-                width: screen.width,
-                height:screen.height*0.1,
-                color: Colors.white,
-                child: ListView.builder(scrollDirection: Axis.horizontal,itemCount: carprovider.carOnlineList.length
-                    ,itemBuilder: (context,iteam){
-                  final carModel=carprovider.carOnlineList[iteam];
-                  return Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: InkWell(
-                        onTap: (){
-                          Navigator.pushNamed(context,CarDetailPage.routeName,arguments: carModel.id);
-                        },
-                        child: CustomCarListTile(carName: carModel.carName, place:carModel.place, carPicUrl: carModel.carPicUrl, carPrice: carModel.carPrice, hight: screen.height*0.35, width: screen.width*0.75)),
-                  );
+              width: screen.width,
+              height:screen.height*0.45,
+              color: Colors.white,
+              child: ListView.builder(scrollDirection: Axis.horizontal,itemCount: carprovider.carOnlineList.length
+                  ,itemBuilder: (context,iteam){
+                    final carModel=carprovider.carOnlineList[iteam];
+                    return Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: InkWell(
+                          onTap: (){
+                            Navigator.pushNamed(context,CarDetailPage.routeName,arguments: carModel.id);
+                          },
+                          child: CustomCarListTile(carName: carModel.carName, place:carModel.place, carPicUrl: carModel.carPicUrl, carPrice: carModel.carPrice, hight: screen.height*0.35, width: screen.width*0.75)),
+                    );
 
 
-                }),
-              ),
+                  }),
+            ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
@@ -130,25 +130,25 @@ class _UserPageState extends State<UserPage> {
               child: Padding(
                 padding: const EdgeInsets.all(2.0),
                 child: Consumer<AppDriverHalperProvider>(builder: (context,provider,_)=> Container(
-                    width: screen.width,
-                    height:screen.height*0.4,
-                    color: Colors.white,
-                    child: ListView.builder(scrollDirection: Axis.vertical,itemCount:provider.driverOnlineList.length ,itemBuilder: (context,iteam){
-                      final drivermodel=provider.driverOnlineList[iteam];
-                      return Card(
+                  width: screen.width,
+                  height:screen.height*0.5,
+                  color: Colors.white,
+                  child: ListView.builder(scrollDirection: Axis.vertical,itemCount:provider.driverOnlineList.length ,itemBuilder: (context,iteam){
+                    final drivermodel=provider.driverOnlineList[iteam];
+                    return Card(
                         elevation: 10,
                         child: Container(
-                            color: Colors.white30,
-                            child: InkWell(
-                              onTap: (){
-                                Navigator.pushNamed(context, DriverDetailPage.routeName,arguments: drivermodel.id);
-                              },
-                              child: CustomListTile(imageurl: drivermodel.driverImageUrl, name:drivermodel.driverName, skill: drivermodel.driverSkill, rating: drivermodel.driverRating,
-                          price: drivermodel.driverSalary.toString(),driverAvility: drivermodel.driverAbility=="Available"?true:false ,hight: screen.height,width: screen.width,),
-                            ),
-                      ));
-                    }),
-                  ),
+                          color: Colors.white30,
+                          child: InkWell(
+                            onTap: (){
+                              Navigator.pushNamed(context, DriverDetailPage.routeName,arguments: drivermodel.id);
+                            },
+                            child: CustomListTile(imageurl: drivermodel.driverImageUrl, name:drivermodel.driverName, skill: drivermodel.driverSkill, rating: drivermodel.driverRating,
+                              price: drivermodel.driverSalary.toString(),driverAvility: drivermodel.driverAbility=="Available"?true:false ,hight: screen.height,width: screen.width,),
+                          ),
+                        ));
+                  }),
+                ),
                 ),
               ),
             ),
