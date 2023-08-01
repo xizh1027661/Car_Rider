@@ -14,7 +14,9 @@ import 'package:chat_gpt_flutter/chat_gpt_flutter.dart';
 import '/question_answer.dart';
 import 'package:flutter/material.dart';
 
-const apiKey = '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';
+// const String usage = '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';     // leaked! July 16, 2023
+const usage = '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';
+const apiKey = usage;
 
 class UserPage extends StatefulWidget {
   static const String routeName = "/userpage";
@@ -100,15 +102,16 @@ class _UserPageState extends State<UserPage> {
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
                   width: screen.width,
-                  height: screen.height * 0.5,
+                  height: screen.height * 0.4,
                   child: Column(children: [
                     // Text('TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT'),
                     // Text('QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ'),
 
-                    Text(
-                      "ChatGPT",
-                      style: TextStyle(color: Colors.blue, fontSize: 30.0),
-                    ),
+                    // Text(
+                    //   "ChatGPT",
+                    //   style: TextStyle(color: Colors.blue, fontSize: 30.0),
+                    // ),
+
 
                     Expanded(
                       child: ListView.separated(
@@ -166,7 +169,11 @@ class _UserPageState extends State<UserPage> {
                       ],
                     ),
                   ]),
-                )),
+                )
+            ),
+
+
+
 
             // Consumer<AppFareHalperProvider>(builder: (context,provider,_)=> Container(
             //

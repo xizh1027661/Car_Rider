@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '1.8.10'    // original 1.6.10;   Aug 1, 2023
     repositories {
         google()
         mavenCentral()
