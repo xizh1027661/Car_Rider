@@ -92,7 +92,7 @@ class _AdminDashBoardState extends State<AdminDashBoard> {
                 Consumer<AppCarHelperProvider>(builder: (context,provider,_)=>
                     Container(
                       width: screen.width,
-                      height:screen.height*0.4,
+                      height:screen.height*0.45,
                     child: ListView.builder(scrollDirection: Axis.horizontal,itemCount:provider.carList.length,itemBuilder: (context,iteam){
                       final carmodel=provider.carList[iteam];
                       return Padding(
